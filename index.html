@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hope Flynn's Birthday Quiz</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>Hope's 21<sup>st</sup> Birthday 🎉</h1>
+        <p>Heeey Friends, Lets see who knows me best! 🎉</p>
+
+        <form id="quiz-form">
+            <div class="question">
+                <p>1. What is my favorite color?</p>
+                <label><input type="radio" name="q1" value="A"> A) Blue</label>
+                <label><input type="radio" name="q1" value="B"> B) Pink</label>
+                <label><input type="radio" name="q1" value="C"> C) Green</label>
+                <label><input type="radio" name="q1" value="D"> D) Purple</label>
+            </div>
+
+            <div class="question">
+                <p>2. If I got famous overnight, what would it most likely be for?</p>
+                <label><input type="radio" name="q2" value="A"> A) A viral TikTok</label>
+                <label><input type="radio" name="q2" value="B"> B) Winning a reality show</label>
+                <label><input type="radio" name="q2" value="C"> C) Dropping a hit song</label>
+                <label><input type="radio" name="q2" value="D"> D) Accidentally becoming a meme</label>
+            </div>
+
+            <div class="question">
+                <p>3. I’ve rewatched a show so many times that I can quote entire scenes</p>
+                <label><input type="radio" name="q3" value="True"> True</label>
+                <label><input type="radio" name="q3" value="False"> False</label>
+            </div>
+
+            <div class="question">
+                <p>4. I have a playlist for literally every possible mood and situation.</p>
+                <label><input type="radio" name="q4" value="True"> True</label>
+                <label><input type="radio" name="q4" value="False"> False</label>
+            </div>
+
+            <div class="question">
+                <p>5. What’s my ultimate guilty pleasure?</p>
+                <label><input type="radio" name="q5" value="A"> A) Taking personality quizzes that mean nothing</label>
+                <label><input type="radio" name="q5" value="B"> B) Staying up whole day doing nothing productive</label>
+                <label><input type="radio" name="q5" value="C"> C) Obsessing over memes and viral trends</label>
+                <label><input type="radio" name="q5" value="D"> D) Rewatching childhood cartoons on repeat</label>
+            </div>
+
+            <div class="question">
+                <p>6. Which of these best describes me?</p>
+                <label><input type="radio" name="q1" value="A"> A) Night owl</label>
+                <label><input type="radio" name="q1" value="B"> B) Early bird</label>
+                <label><input type="radio" name="q1" value="C"> C) Always sleepy</label>
+                <label><input type="radio" name="q1" value="D"> D) Random energy bursts</label>
+            </div>
+
+            <div class="question">
+                <p>7. How do I feel about shopping?</p>
+                <label><input type="radio" name="q1" value="A"> A) I’m all about online shopping—it’s convenient and fun!</label>
+                <label><input type="radio" name="q1" value="B"> B) Early bird</label>
+                <label><input type="radio" name="q1" value="C"> C) Always sleepy</label>
+                <label><input type="radio" name="q1" value="D"> D) Random energy bursts</label>
+            </div>
+            </div>
+            
+
+
+
+
+            <h2>Write a birthday message for Hope!</h2>
+            <textarea id="message-box" placeholder="Type your message here..."></textarea>
+
+            <button type="button" onclick="submitQuiz()">Submit</button>
+        </form>
+
+        <div id="results"></div>
+        <h2>Leaderboard</h2>
+        <ol id="leaderboard"></ol>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
