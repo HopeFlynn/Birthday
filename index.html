@@ -1,86 +1,138 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hope Flynn's Birthday Quiz</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hope Flynn's Birthday Quiz</title>
+  <!-- Link to external CSS -->
+  <link rel="stylesheet" href="styles.css">
+  <!-- Google Fonts for playful style -->
+  <link href="https://fonts.googleapis.com/css?family=Pacifico|Poppins:400,600&display=swap" rel="stylesheet">
 </head>
 <body>
-
-    <div class="container">
-        <h1>Hope's 21<sup>st</sup> Birthday 🎉</h1>
-        <p>Heeey Friends, Lets see who knows me best! 🎉</p>
-
-        <form id="quiz-form">
-            <div class="question">
-                <p>1. What is my favorite color?</p>
-                <label><input type="radio" name="q1" value="A"> A) Blue</label>
-                <label><input type="radio" name="q1" value="B"> B) Pink</label>
-                <label><input type="radio" name="q1" value="C"> C) Green</label>
-                <label><input type="radio" name="q1" value="D"> D) Purple</label>
-            </div>
-
-            <div class="question">
-                <p>2. If I got famous overnight, what would it most likely be for?</p>
-                <label><input type="radio" name="q2" value="A"> A) A viral TikTok</label>
-                <label><input type="radio" name="q2" value="B"> B) Winning a reality show</label>
-                <label><input type="radio" name="q2" value="C"> C) Dropping a hit song</label>
-                <label><input type="radio" name="q2" value="D"> D) Accidentally becoming a meme</label>
-            </div>
-
-            <div class="question">
-                <p>3. I’ve rewatched a show so many times that I can quote entire scenes</p>
-                <label><input type="radio" name="q3" value="True"> True</label>
-                <label><input type="radio" name="q3" value="False"> False</label>
-            </div>
-
-            <div class="question">
-                <p>4. I have a playlist for literally every possible mood and situation.</p>
-                <label><input type="radio" name="q4" value="True"> True</label>
-                <label><input type="radio" name="q4" value="False"> False</label>
-            </div>
-
-            <div class="question">
-                <p>5. What’s my ultimate guilty pleasure?</p>
-                <label><input type="radio" name="q5" value="A"> A) Taking personality quizzes that mean nothing</label>
-                <label><input type="radio" name="q5" value="B"> B) Staying up whole day doing nothing productive</label>
-                <label><input type="radio" name="q5" value="C"> C) Obsessing over memes and viral trends</label>
-                <label><input type="radio" name="q5" value="D"> D) Rewatching childhood cartoons on repeat</label>
-            </div>
-
-            <div class="question">
-                <p>6. Which of these best describes me?</p>
-                <label><input type="radio" name="q1" value="A"> A) Night owl</label>
-                <label><input type="radio" name="q1" value="B"> B) Early bird</label>
-                <label><input type="radio" name="q1" value="C"> C) Always sleepy</label>
-                <label><input type="radio" name="q1" value="D"> D) Random energy bursts</label>
-            </div>
-
-            <div class="question">
-                <p>7. How do I feel about shopping?</p>
-                <label><input type="radio" name="q1" value="A"> A) I’m all about online shopping—it’s convenient and fun!</label>
-                <label><input type="radio" name="q1" value="B"> B) Early bird</label>
-                <label><input type="radio" name="q1" value="C"> C) Always sleepy</label>
-                <label><input type="radio" name="q1" value="D"> D) Random energy bursts</label>
-            </div>
-            </div>
-            
-
-
-
-
-            <h2>Write a birthday message for Hope!</h2>
-            <textarea id="message-box" placeholder="Type your message here..."></textarea>
-
-            <button type="button" onclick="submitQuiz()">Submit</button>
-        </form>
-
-        <div id="results"></div>
-        <h2>Leaderboard</h2>
-        <ol id="leaderboard"></ol>
-    </div>
-
-    <script src="script.js"></script>
+  <div class="container">
+    <h1>Hope's 21<sup>st</sup> Birthday 🎉</h1>
+    <p>Heeey Friends, Let's see who knows me best! 🎉</p>
+    
+    <form id="quiz-form">
+      <!-- Question 1 -->
+      <div class="question">
+        <p>1. What is my favorite color?</p>
+        <label><input type="radio" name="q1" value="A"> A) Blue</label>
+        <label><input type="radio" name="q1" value="B"> B) Pink</label>
+        <label><input type="radio" name="q1" value="C"> C) Green</label>
+        <label><input type="radio" name="q1" value="D"> D) Purple</label>
+      </div>
+      
+      <!-- Question 2 -->
+      <div class="question">
+        <p>2. If I got famous overnight, what would it most likely be for?</p>
+        <label><input type="radio" name="q2" value="A"> A) A viral TikTok</label>
+        <label><input type="radio" name="q2" value="B"> B) Winning a reality show</label>
+        <label><input type="radio" name="q2" value="C"> C) Dropping a hit song</label>
+        <label><input type="radio" name="q2" value="D"> D) Accidentally becoming a meme</label>
+      </div>
+      
+      <!-- Question 3 -->
+      <div class="question">
+        <p>3. I’ve rewatched a show so many times that I can quote entire scenes.</p>
+        <label><input type="radio" name="q3" value="True"> True</label>
+        <label><input type="radio" name="q3" value="False"> False</label>
+      </div>
+      
+      <!-- Question 4 -->
+      <div class="question">
+        <p>4. I have a playlist for literally every possible mood and situation.</p>
+        <label><input type="radio" name="q4" value="True"> True</label>
+        <label><input type="radio" name="q4" value="False"> False</label>
+      </div>
+      
+      <!-- Question 5 -->
+      <div class="question">
+        <p>5. What’s my ultimate guilty pleasure?</p>
+        <label><input type="radio" name="q5" value="A"> A) Taking personality quizzes that mean nothing</label>
+        <label><input type="radio" name="q5" value="B"> B) Staying up the whole day doing nothing productive</label>
+        <label><input type="radio" name="q5" value="C"> C) Obsessing over memes and viral trends</label>
+        <label><input type="radio" name="q5" value="D"> D) Rewatching childhood cartoons on repeat</label>
+      </div>
+      
+      <!-- Question 6 -->
+      <div class="question">
+        <p>6. Which of these best describes me?</p>
+        <label><input type="radio" name="q6" value="A"> A) Night owl</label>
+        <label><input type="radio" name="q6" value="B"> B) Early bird</label>
+        <label><input type="radio" name="q6" value="C"> C) Always sleepy</label>
+        <label><input type="radio" name="q6" value="D"> D) Random energy bursts</label>
+      </div>
+      
+      <!-- Question 7 -->
+      <div class="question">
+        <p>7. How do I feel about shopping?</p>
+        <label><input type="radio" name="q7" value="A"> A) I’m all about online shopping—it’s convenient and fun!</label>
+        <label><input type="radio" name="q7" value="B"> B) I enjoy both online and in-person shopping equally.</label>
+        <label><input type="radio" name="q7" value="C"> C) I prefer in-person shopping for the experience.</label>
+        <label><input type="radio" name="q7" value="D"> D) I’m not really into shopping at all.</label>
+      </div>
+      
+      <!-- Question 8 -->
+      <div class="question">
+        <p>8. When it comes to communication, what do I prefer?</p>
+        <label><input type="radio" name="q8" value="A"> A) Texting—I can think before I reply.</label>
+        <label><input type="radio" name="q8" value="B"> B) FaceTime or video calls—seeing someone makes it personal.</label>
+        <label><input type="radio" name="q8" value="C"> C) A mix of both, depending on the mood.</label>
+        <label><input type="radio" name="q8" value="D"> D) Voice calls.</label>
+      </div>
+      
+      <!-- Question 9 -->
+      <div class="question">
+        <p>9. I edit my photos for hours to get that flawless aesthetic before posting.</p>
+        <label><input type="radio" name="q9" value="True"> True</label>
+        <label><input type="radio" name="q9" value="False"> False</label>
+      </div>
+      
+      <!-- Question 10 -->
+      <div class="question">
+        <p>10. Which level of education have I not been a leader?</p>
+        <label><input type="radio" name="q10" value="A"> A) University</label>
+        <label><input type="radio" name="q10" value="B"> B) Primary</label>
+        <label><input type="radio" name="q10" value="C"> C) High School</label>
+        <label><input type="radio" name="q10" value="D"> D) None of the above</label>
+      </div>
+      
+      <!-- Question 11 -->
+      <div class="question">
+        <p>11. When I post a story, how often do I re-watch it?</p>
+        <label><input type="radio" name="q11" value="A"> A) Sometimes</label>
+        <label><input type="radio" name="q11" value="B"> B) Rarely</label>
+        <label><input type="radio" name="q11" value="C"> C) Never – I’m too busy scrolling through other stories</label>
+        <label><input type="radio" name="q11" value="D"> D) Every single time</label>
+      </div>
+      
+      <!-- Question 12 -->
+      <div class="question">
+        <p>12. What is my go-to food?</p>
+        <label><input type="radio" name="q12" value="A"> A) Indomie</label>
+        <label><input type="radio" name="q12" value="B"> B) Spaghetti</label>
+        <label><input type="radio" name="q12" value="C"> C) Smocha</label>
+        <label><input type="radio" name="q12" value="D"> D) Eggs</label>
+      </div>
+      
+      <!-- Birthday message section -->
+      <h2>Write a birthday message for Hope!</h2>
+      <textarea id="message-box" placeholder="Type your message here..."></textarea>
+      
+      <!-- Action buttons -->
+      <button type="button" onclick="submitQuiz()">Submit</button>
+      <button type="button" onclick="resetLeaderboard()">Reset Leaderboard</button>
+    </form>
+    
+    <!-- Results and Leaderboard -->
+    <div id="results"></div>
+    <h2>Leaderboard</h2>
+    <ol id="leaderboard"></ol>
+  </div>
+  
+  <!-- Link to external JavaScript -->
+  <script src="js/script.js"></script>
 </body>
 </html>
