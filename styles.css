@@ -7,6 +7,91 @@ body {
     color: #333;
   }
   
+  /* Cute header banner with a soft gradient background */
+  header.cute-banner {
+    position: relative;
+    background: linear-gradient(135deg, #E1C7FA, #FCE8FF);
+    padding: 40px 20px;
+    border-radius: 15px;
+    text-align: center;
+    margin: 20px auto 40px;
+    overflow: hidden;
+  }
+  
+  /* Header title with a dramatic and cute style */
+  header.cute-banner h1 {
+    font-family: 'Lobster', cursive;
+    color: #FF6F91;
+    font-size: 3em;
+    margin: 0;
+  }
+  
+  /* Header subtitle with a playful hand-drawn look */
+  header.cute-banner p {
+    font-family: 'Lobster', cursive;
+    font-size: 1.5em;
+    color: #FF3B81;
+    margin: 10px 0 0;
+  }
+  
+  /* Bubbles container covers the banner area */
+  .bubbles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+  }
+  
+  /* Each bubble is a cute, floating circle */
+  .bubble {
+    position: absolute;
+    background: rgba(255, 111, 145, 0.5);
+    border-radius: 50%;
+    animation: float 6s ease-in-out infinite;
+  }
+  
+  /* Define various sizes and positions for bubbles */
+  .bubble1 {
+    width: 30px;
+    height: 30px;
+    top: 10%;
+    left: 20%;
+    animation-delay: 0s;
+  }
+  
+  .bubble2 {
+    width: 40px;
+    height: 40px;
+    top: 20%;
+    left: 70%;
+    animation-delay: 2s;
+  }
+  
+  .bubble3 {
+    width: 20px;
+    height: 20px;
+    top: 60%;
+    left: 30%;
+    animation-delay: 1s;
+  }
+  
+  .bubble4 {
+    width: 35px;
+    height: 35px;
+    top: 80%;
+    left: 50%;
+    animation-delay: 3s;
+  }
+  
+  /* Floating animation for bubbles */
+  @keyframes float {
+    0% { transform: translateY(0) scale(1); opacity: 0.8; }
+    50% { transform: translateY(-10px) scale(1.1); opacity: 1; }
+    100% { transform: translateY(0) scale(1); opacity: 0.8; }
+  }
+  
   /* Main container styling */
   .container {
     max-width: 800px;
@@ -17,16 +102,7 @@ body {
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
   }
   
-  /* Fun header styling */
-  h1 {
-    font-family: 'Lobster', cursive;
-    color: #FF6F91;
-    font-size: 2.8em;
-    text-align: center;
-    margin-bottom: 10px;
-    animation: fadeIn 1.5s ease-in;
-  }
-  
+  /* Centered text for paragraphs */
   p {
     text-align: center;
     font-size: 1.2em;
@@ -38,6 +114,7 @@ body {
     margin: 20px 0;
   }
   
+  /* Question card styling with a cute left border */
   .question {
     background: #fff0f5;
     border-left: 4px solid #FF6F91;
@@ -112,11 +189,5 @@ body {
   
   #leaderboard ol {
     padding-left: 20px;
-  }
-  
-  /* Keyframes for fade-in animation */
-  @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(-20px); }
-    to { opacity: 1; transform: translateY(0); }
   }
   
