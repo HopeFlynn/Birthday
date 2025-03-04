@@ -1,17 +1,20 @@
 // Correct answers for the quiz
 const correctAnswers = {
-    q1: "B",  // Favorite color (Pink)
+    q1: "D",  // Favorite color (Purple)
     q2: "A",  // Fame via a viral TikTok
-    q3: "True",  // Rewatched a show for quotes
-    q4: "True",  // Playlist for every mood
-    q5: "C",  // Guilty pleasure: Obsessing over memes and viral trends
-    q6: "D",  // Random energy bursts
-    q7: "A",  // All about online shopping
-    q8: "A",  // Prefer texting
-    q9: "True",  // Edit photos for flawless aesthetic
-    q10: "D", // Level of education not being a leader: None of the above
+    q3: "True",  // I have, Big bang.
+    q4: "True",  // I do.
+    q5: "B",  // Staying up the whole day doing nothing productive
+    q6: "B",  // Early bird
+    q7: "C",  //  I prefer in-person shopping for the experience.
+    q8: "C",  //  A mix of both, depending on the mood.
+    q9: "False",  //I only edit videos
+    q10: "D", //  None of the above
     q11: "D", // Re-watch every single time
-    q12: "A"  // Go-to food: Indomie
+    q12: "B",  // Go-to food: Spaghetti
+    q13: "D", // I turn them all off.
+    q14: "D", //Say "aww" out loud.
+    q15: "B", //I tend to avoid it after saying my piece.
   };
   
   function submitQuiz() {
