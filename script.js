@@ -50,14 +50,7 @@ function submitQuiz() {
   leaderboard.sort((a, b) => b.score - a.score);
   localStorage.setItem("leaderboard", JSON.stringify(leaderboard));
 
-  // Display quiz results
-  let resultsDiv = document.getElementById("results");
-  resultsDiv.innerHTML = `<h2>Your Score: ${score} / ${totalQuestions}</h2>`;
-  resultsDiv.innerHTML += "<h3>Correct Answers:</h3>";
-  Object.keys(correctAnswers).forEach(q => {
-    resultsDiv.innerHTML += `<p><strong>${q.toUpperCase()}:</strong> ${correctAnswers[q]}</p>`;
-  });
-
+  
   // Refresh leaderboard display
   updateLeaderboard();
 }
