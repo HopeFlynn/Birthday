@@ -13,27 +13,25 @@ const correctAnswers = {
   q11: "D", // Re-watch every single time
   q12: "B",  // Go-to food: Spaghetti
   q13: "D", // I turn them all off.
-  q14: "D", // Say "aww" out loud.
+  q14: "C", // Say "aww" out loud.
   q15: "B", // I tend to avoid it after saying my piece.
 };
 
 // Function to handle quiz submission
-function submitQuiz(event) {
-  event.preventDefault(); // Prevent page reload
-
+function submitQuiz() {
   let score = 0;
   let totalQuestions = Object.keys(correctAnswers).length;
   let userAnswers = {};
 
   // Loop through each question and check answers
   Object.keys(correctAnswers).forEach(question => {
-      let selected = document.querySelector(`input[name="${question}"]:checked`);
-      if (selected) {
-          userAnswers[question] = selected.value;
-          if (selected.value === correctAnswers[question]) {
-              score++;
-          }
+    let selected = document.querySelector(`input[name="${question}"]:checked`);
+    if (selected) {
+      userAnswers[question] = selected.value;
+      if (selected.value === correctAnswers[question]) {
+        score++;
       }
+    }
   });
 
   // Retrieve the birthday message
@@ -42,13 +40,13 @@ function submitQuiz(event) {
   // Prompt for player's name
   let playerName = prompt("Enter your name:");
   if (!playerName || playerName.trim() === "") {
-      alert("You must enter your name to submit the quiz.");
-      return; // Stop submission if no name is entered
+    alert("You must enter your name to submit the quiz.");
+    return; // Stop submission if no name is entered
   }
 
   // Save score and message to localStorage leaderboard
   let leaderboard = JSON.parse(localStorage.getItem("leaderboard")) || [];
-  leaderboard.push({ name: playerName, score, message });
+  leaderboard.push({ name: playerName.trim(), score, message });
   leaderboard.sort((a, b) => b.score - a.score);
   localStorage.setItem("leaderboard", JSON.stringify(leaderboard));
 
@@ -57,7 +55,7 @@ function submitQuiz(event) {
   resultsDiv.innerHTML = `<h2>Your Score: ${score} / ${totalQuestions}</h2>`;
   resultsDiv.innerHTML += "<h3>Correct Answers:</h3>";
   Object.keys(correctAnswers).forEach(q => {
-      resultsDiv.innerHTML += `<p><strong>${q.toUpperCase()}:</strong> ${correctAnswers[q]}</p>`;
+    resultsDiv.innerHTML += `<p><strong>${q.toUpperCase()}:</strong> ${correctAnswers[q]}</p>`;
   });
 
   // Refresh leaderboard display
@@ -71,14 +69,18 @@ function updateLeaderboard() {
 
   // Check if leaderboard exists
   if (!leaderboardList) {
-      console.error("Leaderboard element not found in HTML.");
-      return;
+    console.error("Leaderboard element not found in HTML.");
+    return;
   }
 
   leaderboardList.innerHTML = "";
-  leaderboard.forEach(entry => {
+  if (leaderboard.length === 0) {
+    leaderboardList.innerHTML = "<p>No scores yet. Be the first to play!</p>";
+  } else {
+    leaderboard.forEach(entry => {
       leaderboardList.innerHTML += `<li><strong>${entry.name}:</strong> ${entry.score} points - "${entry.message}"</li>`;
-  });
+    });
+  }
 }
 
 // Function to reset the leaderboard
@@ -90,12 +92,4 @@ function resetLeaderboard() {
 // Ensure the leaderboard updates when the page loads
 document.addEventListener("DOMContentLoaded", function () {
   updateLeaderboard();
-
-  // Attach event listener to the submit button
-  let submitButton = document.getElementById("submit-btn");
-  if (submitButton) {
-      submitButton.addEventListener("click", submitQuiz);
-  } else {
-      console.error("Submit button not found in HTML.");
-  }
 });
