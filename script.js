@@ -76,11 +76,6 @@ function updateLeaderboard() {
   }
 }
 
-// Function to reset the leaderboard
-function resetLeaderboard() {
-  localStorage.removeItem("leaderboard");
-  updateLeaderboard();
-}
 
 // Ensure the leaderboard updates when the page loads
 document.addEventListener("DOMContentLoaded", function () {
